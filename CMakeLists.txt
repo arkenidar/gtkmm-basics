@@ -3,7 +3,12 @@ project(app)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(GTKMM gtkmm-3.0) # pacman -S mingw-w64-x86_64-gtkmm3 # in MSYS+MINGW
+
+# gh: arkenidar / hello-gtkmm
+# gtkmm-3.0 : setup :
+# sudo apt install libgtkmm-3.0-dev # Debian-based
+# pacman -S mingw-w64-x86_64-gtkmm3 # in MSYS+MINGW (MS Windows)
+pkg_check_modules(GTKMM gtkmm-3.0)
 
 include_directories(${GTKMM_INCLUDE_DIRS})
 link_directories(${GTKMM_LIBRARY_DIRS})
